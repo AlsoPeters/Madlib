@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Madlib</title>
+</head>
+
+<body style="background-color:cornflowerblue">
+    <h1 style="text-align: center;">Madlib Generator</h1>
+
+    <form action="/action_page.php">
+        <label for="noun">Noun</label><br>
+        <input type="text" id="noun"><br>
+        <label for="adjective">Adjective</label><br>
+        <input type="text" id="adjective"><br>
+        <label for="verb">Verb</label><br>
+        <input type="text" id="verb"><br>
+        <label for="person">Someone's Name</label><br>
+        <input type="text" id="person"><br><br>
+    </form>
+
+    <button id="lib-button">Generate Madlib</button>
+
+    <h1 style="text-align: center;" id="gaylife" ></h1>
+
+    
+    <p><span id="story"></span>
+    </p>
+
+<script>
+    var libButton = document.getElementById('lib-button');
+    var libIt = function() {
+        var gaylife = "My Gay Life"
+        var storyDiv = document.getElementById("story");
+        var noun = document.getElementById("noun").value;
+        var adjective = document.getElementById("adjective").value;
+        var verb = document.getElementById("verb").value;
+        var person = document.getElementById("person").value;
+        var gay = document.getElementById("gaylife")
+        gay.innerHTML = gaylife;
+        storyDiv.innerHTML = `There once was a man named ${person}.
+        He would ${verb} all day.
+        He lived in a ${noun} that was very ${adjective}.
+        What a sad life ${person} lived.`
+    };
+    libButton.addEventListener('click', libIt);
+</script>
+
+</body>
+</html>
